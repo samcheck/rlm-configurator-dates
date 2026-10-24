@@ -34,15 +34,19 @@ npm run prettier
 Clone the configurator flow, then place `RLM Configurator Dates` on the
 configurator screen after the Data Manager component.
 
-| Component Property                 | Flow Value                                                                             |
-| ---------------------------------- | -------------------------------------------------------------------------------------- |
-| `transactionLineId` (required)     | Data Manager `transactionLineId`                                                       |
-| `salesTransactionItems` (required) | Data Manager `salesTransactionItems`                                                   |
-| `isApiInProgress`                  | Data Manager `isApiInProgress`                                                         |
-| `isConfiguratorDisabled`           | Data Manager `isConfiguratorDisabled`                                                  |
-| `contextMetadata` (required)       | Data Manager `contextMetadata`; the component discovers the date attribute ids from it |
-| `startDateField`                   | Optional; defaults to `StartDate`                                                      |
-| `endDateField`                     | Optional; defaults to `EndDate`                                                        |
+| Component Property                 | Flow Value                                                                                   |
+| ---------------------------------- | -------------------------------------------------------------------------------------------- |
+| `transactionLineId` (required)     | `{!configuratorContext.transactionLineId}`                                                   |
+| `salesTransactionItems` (required) | `{!S01_DataManager.salesTransactionItems}`                                                   |
+| `contextMetadata` (required)       | `{!S01_DataManager.contextMetadata}`; the component discovers the date attribute ids from it |
+| `isApiInProgress`                  | Data Manager `isApiInProgress`                                                               |
+| `isConfiguratorDisabled`           | Data Manager `isConfiguratorDisabled`                                                        |
+| `startDateField`                   | Optional; defaults to `StartDate`                                                            |
+| `endDateField`                     | Optional; defaults to `EndDate`                                                              |
+
+The flow values above assume the Data Manager screen component is named
+`S01_DataManager` and the flow has a `configuratorContext` variable. If yours
+are named differently, bind the same outputs from them.
 
 ### Attribute ids
 
