@@ -1,0 +1,5 @@
+node_modules/
+.sfdx/
+.sf/
+coverage/
+.DS_Store

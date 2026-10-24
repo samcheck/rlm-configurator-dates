@@ -1,0 +1,67 @@
+<template>
+  <lightning-card title="Dates" icon-name="standard:date_input">
+    <lightning-button
+      slot="actions"
+      label="Apply dates to options"
+      title="Copy the Start Date to every product option and the End Date to term-defined options"
+      disabled={isApplyDisabled}
+      onclick={handleApplyToOptions}
+    ></lightning-button>
+    <div class="slds-var-p-horizontal_medium">
+      <div class="slds-grid slds-gutters slds-wrap">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-input
+            type="date"
+            label="Start Date"
+            name="start"
+            value={startDate}
+            disabled={isDisabled}
+            onchange={handleDateChange}
+          ></lightning-input>
+        </div>
+        <template lwc:if={isTermDefined}>
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <lightning-input
+              type="date"
+              label="End Date"
+              name="end"
+              value={endDate}
+              disabled={isDisabled}
+              onchange={handleDateChange}
+            ></lightning-input>
+          </div>
+        </template>
+        <template lwc:if={isTermDefined}>
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <lightning-input
+              type="number"
+              label="Subscription Term"
+              name="term"
+              min="1"
+              step="1"
+              value={term}
+              disabled={isDisabled}
+              onchange={handleTermChange}
+            ></lightning-input>
+          </div>
+        </template>
+        <template lwc:if={isTermDefined}>
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <lightning-input
+              type="text"
+              label="Term Unit"
+              name="unit"
+              value={termUnit}
+              read-only
+            ></lightning-input>
+          </div>
+        </template>
+      </div>
+      <template lwc:if={errorMessage}>
+        <p class="slds-text-color_error slds-var-m-top_x-small" role="alert">
+          {errorMessage}
+        </p>
+      </template>
+    </div>
+  </lightning-card>
+</template>

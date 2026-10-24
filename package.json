@@ -1,0 +1,16 @@
+{
+  "name": "rlm-configurator-dates",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Product Configurator Flow Screen component for editing start date, end date and subscription term",
+  "devDependencies": {
+    "@salesforce/sfdx-lwc-jest": "^7.1.2",
+    "prettier": "^3.8.4",
+    "prettier-plugin-apex": "^2.3.0"
+  },
+  "scripts": {
+    "test": "sfdx-lwc-jest",
+    "prettier": "prettier --write \"**/*.{css,html,js,json,md}\"",
+    "prettier:verify": "prettier --check \"**/*.{css,html,js,json,md}\""
+  }
+}

@@ -1,0 +1,4 @@
+# LWC Jest
+**/__tests__/**
+**/jsconfig.json
+**/.eslintrc.json

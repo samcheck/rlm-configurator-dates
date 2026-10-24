@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>68.0</apiVersion>
+  <isExposed>true</isExposed>
+  <masterLabel>RLM Configurator Dates</masterLabel>
+  <description>Product Configurator Flow Screen component that sets the start date, end date and subscription term on the product being configured.</description>
+  <targets>
+    <target>lightning__FlowScreen</target>
+  </targets>
+  <targetConfigs>
+    <targetConfig targets="lightning__FlowScreen">
+      <property
+        name="transactionLineId"
+        required="true"
+        type="String"
+        role="inputOnly"
+        label="Transaction Line ID"
+        description="Data Manager transactionLineId: the root line being configured."
+      />
+      <property
+        name="salesTransactionItems"
+        required="true"
+        type="apex://ProductConfig.SalesTransactionItem[]"
+        role="inputOnly"
+        label="Sales Transaction Items"
+        description="Data Manager salesTransactionItems; used to seed the current dates."
+      />
+      <property
+        name="isApiInProgress"
+        type="Boolean"
+        role="inputOnly"
+        label="Is API In Progress"
+        description="Data Manager isApiInProgress; inputs are disabled while true."
+      />
+      <property
+        name="isConfiguratorDisabled"
+        type="Boolean"
+        role="inputOnly"
+        label="Is Configurator Disabled"
+        description="Data Manager isConfiguratorDisabled; inputs are disabled while true."
+      />
+      <property
+        name="startDateField"
+        type="String"
+        role="inputOnly"
+        label="Start Date Field"
+        description="Line field to write the start date to. Defaults to StartDate."
+      />
+      <property
+        name="endDateField"
+        type="String"
+        role="inputOnly"
+        label="End Date Field"
+        description="Line field to write the end date to. Defaults to EndDate."
+      />
+      <property
+        name="contextMetadata"
+        required="true"
+        type="String"
+        role="inputOnly"
+        label="Context Metadata"
+        description="Data Manager contextMetadata; the Start/End Date attribute ids are discovered from it."
+      />
+    </targetConfig>
+  </targetConfigs>
+</LightningComponentBundle>
