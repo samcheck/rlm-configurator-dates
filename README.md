@@ -8,6 +8,10 @@ root line) and can copy the dates to its options.
 It is a single Lightning Web Component in a standard Salesforce DX project, so
 it deploys on its own. You add it to a copy of your configurator flow by hand.
 
+![The Dates card on the configurator screen, with the Apply dates to options button in its header](docs/images/configurator-dates-example.webp)
+
+The Dates card as an end user sees it while configuring a term-defined product.
+
 ## Requirements
 
 - An org with the Product Configurator and the Data Manager flow component
