@@ -44,6 +44,8 @@ configurator screen after the Data Manager component.
 | `startDateField`                   | Optional; defaults to `StartDate`                                                            |
 | `endDateField`                     | Optional; defaults to `EndDate`                                                              |
 
+![Edit Screen in Flow Builder with the component's required inputs bound](docs/images/flow-screen-setup.webp)
+
 The flow values above assume the Data Manager screen component is named
 `S01_DataManager` and the flow has a `configuratorContext` variable. If yours
 are named differently, bind the same outputs from them.
